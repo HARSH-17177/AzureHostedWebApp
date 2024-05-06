@@ -8,7 +8,7 @@ namespace AzureHostedWebApp
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            var connStr = builder.Configuration.GetConnectionString("CustomersConnection");
+            var connStr = builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING");
             builder.Services.AddDbContext<CustomerDbContext>(options =>
             options.UseSqlServer(connStr));
 
